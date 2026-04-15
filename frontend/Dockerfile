@@ -1,9 +1,9 @@
-FROM node:8
+FROM node:16-alpine
 
 WORKDIR /app
 COPY . ./
 
-RUN npm install --silent
+RUN npm config set registry https://registry.npmmirror.com && npm install
 
 EXPOSE 3000
 
