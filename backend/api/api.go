@@ -22,10 +22,7 @@ var db *sql.DB
 var err error
 
 func SetupPostgres() {
-	// db, err = sql.Open("postgres", "postgres://postgres:password@postgres/todo?sslmode=disable")
-
-	// when running locally
-	db, err = sql.Open("postgres", "postgres://postgres:password@localhost/todo?sslmode=disable")
+	db, err = sql.Open("postgres", "postgres://postgres:password@postgres/todo?sslmode=disable")
 
 	if err != nil {
 		fmt.Println(err.Error())
